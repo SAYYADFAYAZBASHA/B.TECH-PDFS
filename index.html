@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects List</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function filterSubjects() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let subjects = document.getElementsByClassName("subject");
+
+            for (let i = 0; i < subjects.length; i++) {
+                let subjectName = subjects[i].innerText.toLowerCase();
+                subjects[i].style.display = subjectName.includes(input) ? "block" : "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Subjects</h1>
+        <input type="text" id="searchBar" onkeyup="filterSubjects()" placeholder="Search subjects...">
+        <div class="subjects">
+            <div class="subject" onclick="window.location.href='subjects/Basic Electrical & Electronics Engineering.html'">Basic Electrical & Electronics Engineering</div>
+            <div class="subject" onclick="window.location.href='subjects/C-Programming & Data Structures.html'">C-Programming & Data Structures</div>
+            <div class="subject" onclick="window.location.href='subjects/chemistry.html'">Chemistry</div>
+            <div class="subject" onclick="window.location.href='subjects/Linear Algebra and Calculus.html'">Linear Algebra and Calculus</div>
+            <div class="subject" onclick="window.location.href='subjects/Applied Physics.html'">Applied Physics</div>
+        </div>
+    </div>
+</body>
+</html>
